@@ -12,6 +12,10 @@ import { GoLocation } from "react-icons/go"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
+import AwesomeSlider from "react-awesome-slider"
+import withAutoplay from "react-awesome-slider/dist/autoplay"
+import "react-awesome-slider/dist/styles.css?raw"
+import { StaticImage } from "gatsby-plugin-image"
 
 const getImages = graphql`
   query {
@@ -27,7 +31,7 @@ const getImages = graphql`
 
 const Navbar = () => {
   const data = useStaticQuery(getImages)
-
+  const AutoplaySlider = withAutoplay(AwesomeSlider)
   const [isOpen, setNav] = useState(false)
   const toggleNav = () => {
     setNav(isOpen => !isOpen)
@@ -70,7 +74,6 @@ const Navbar = () => {
             </a>
           </div>
         </div>
-
         <div className="nav-social-links">
           <a href="https://www.facebook.com/FenrirVet019">
             <FaFacebook />
@@ -86,11 +89,35 @@ const Navbar = () => {
           </a>
         </div>
       </div>
+      <AutoplaySlider play={true} interval={9000}>
+        <div>
+          <StaticImage src="../images/1626194358345.jpg" alt="ambulanta" />
+        </div>
+        <div>
+          <StaticImage src="../images/DSC07748.jpg" alt="ambulanta 2" />
+        </div>
+        <div>
+          <StaticImage src="../images/DSC07749.jpg" alt="ambulanta 3" />
+        </div>
+        <div>
+          <StaticImage src="../images/DSC07765.jpg" alt="hirurgija" />
+        </div>
+        <div>
+          <StaticImage src="../images/DSC07805.jpg" alt="mikroskop" />
+        </div>
+      </AutoplaySlider>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
+
+    .awssld__content {
+        background-color:  var(--offWhite) !important;
+    }  
+
+    padding-left: 0px !important;
+    padding-right: 0px !important;
 
    .cover-container {
     display: block;
@@ -167,6 +194,7 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 30px;
 
     a {
       color: var(--mainBlack);

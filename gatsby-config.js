@@ -28,6 +28,7 @@ module.exports = {
 
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-netlify-headers`,
     `gatsby-plugin-playground`,
     `gatsby-plugin-sitemap`,

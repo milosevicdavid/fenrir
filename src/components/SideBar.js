@@ -6,30 +6,26 @@ import { GoLocation } from "react-icons/go"
 import { FaPhoneAlt } from "react-icons/fa"
 import { BsFillClockFill, BsClockHistory } from "react-icons/bs"
 import { RiDoorClosedFill } from "react-icons/ri"
-import Img from "gatsby-image"
-import { graphql, useStaticQuery } from "gatsby"
+// import Img from "gatsby-image"
+// import { graphql, useStaticQuery } from "gatsby"
 
-const getImages = graphql`
-  query {
-    ponuda: file(relativePath: { eq: "ponuda.jpg" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`
+// const getImages = graphql`
+//   query {
+//     ponuda: file(relativePath: { eq: "ponuda.jpg" }) {
+//       childImageSharp {
+//         fluid {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//   }
+// `
 
 const SideBar = () => {
-  const data = useStaticQuery(getImages)
+  // const data = useStaticQuery(getImages)
 
   return (
     <Wrapper>
-      <div className="ponuda">
-        <Img fluid={data.ponuda.childImageSharp.fluid} />
-      </div>
-
       <div className=" yellowbox">
         <h2>Kontakt</h2>
         <p>
